@@ -1,0 +1,127 @@
+nav {
+    background: lightgrey;
+    padding: 0 15px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+.menu {
+    list-style-type: none;
+}
+.logo {
+    /*font-size: 24px;*/
+    /*padding: 7.5px 10px 7.5px 0;*/
+}
+.item, .logo {
+    padding: 10px;
+}
+.item.button {
+    padding: 9px 5px;
+}
+.item:not(.button) a:hover,
+.item a:hover::after {
+    /*color: darkgrey;*/
+    text-decoration: underline;
+}
+
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu li a {
+    display: block;
+    padding: 15px 5px;
+}
+
+.toggle {
+    order: 1;
+    font-size: 24px;
+}
+.item.button {
+    order: 2;
+}
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.active.item {
+    display: block;
+}
+.button.secondary { /* divider between buttons and menu links */
+    border-bottom: 1px white solid;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+    /* Button up from tablet screen */
+    .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+    .button a {
+        background: #03B4DD;
+        color: white;
+        border: white;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button.secondary a {
+        background: #FF5C5C;
+        border: white;
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: #0088A8;
+        border-color: white;
+    }
+}
+
+/* Desktop menu */
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .button {
+        order: 2;
+    }
+    .toggle {
+        display: none;
+    }
+}

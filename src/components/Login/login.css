@@ -1,0 +1,55 @@
+.formContainer {
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: lightskyblue;
+    width: 90%;
+}
+
+.formHeader {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.formForm {
+    display: flex;
+    flex-flow: column;
+}
+
+.formLabel {
+    padding: 5px;
+}
+
+.formInput {
+    margin: 10px;
+    padding: 12px;
+}
+
+.formSubmit {
+    margin: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    background: #03B4DD;
+    color: white;
+}
+
+.formMessage {
+    display: flex;
+    color: red;
+    justify-content: space-around;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+    .formContainer {
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 960px) {
+    .formContainer {
+        width: 400px;
+    }
+}

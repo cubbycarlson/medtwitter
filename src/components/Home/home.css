@@ -1,0 +1,31 @@
+.homeContainer {
+    margin: 10px auto;
+    max-width: 1200px;
+}
+
+.homeContainer p {
+    margin: 10px
+}
+
+.primaryP {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.secondaryP {
+    font-weight: lighter;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.tertiaryP {
+    font-weight: lighter;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
+
+.login {
+    margin: 0 auto;
+    margin-bottom: 40px;
+}

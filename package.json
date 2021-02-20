@@ -1,0 +1,60 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "social media citations scraper and analyzer",
+  "main": "index.js",
+  "scripts": {
+    "scrape": "node scraper/index.js",
+    "start": "node index.js",
+    "wp": "webpack",
+    "f": "webpack serve",
+    "s": "nodemon index.js",
+    "dev": "concurrently \"nodemon index.js\" \"webpack serve --mode development --env development\"",
+    "deploy": "gcloud app deploy",
+    "browse": "gcloud app browse"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "research",
+    "impact",
+    "factor",
+    "h-index"
+  ],
+  "author": "cubby carlson",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@google-cloud/logging": "^9.0.1",
+    "babel-loader": "^8.2.2",
+    "babel-preset-react": "^6.24.1",
+    "bcrypt": "^5.0.0",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "css-loader": "^5.0.1",
+    "doi-regex": "^0.1.10",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.1",
+    "pg": "^7.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0",
+    "react-router-dom": "^5.2.0",
+    "sanitize.css": "^12.0.1",
+    "style-loader": "^2.0.0",
+    "twitter": "^1.7.1",
+    "webpack": "^5.20.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

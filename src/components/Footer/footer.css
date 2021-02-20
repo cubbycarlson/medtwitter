@@ -1,0 +1,13 @@
+/* footer */
+.footer {
+    margin-top: 10px;
+    padding: 10px;
+    background: ghostwhite;
+    border-top: 1px grey solid;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}

@@ -1,0 +1,19 @@
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+}
+.pageContainer {
+    padding: 20px;
+}
+.pageHeader {
+    font-size: 36px;
+}
+.pageParagraph {
+    padding: 10px;
+}

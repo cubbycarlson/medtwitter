@@ -1,0 +1,4 @@
+2/18/2021:
+2/19/2021:
+- finished database migration!
+- TO DO: update scraper and start SCRAPING again but save all data to DB

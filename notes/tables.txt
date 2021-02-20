@@ -1,0 +1,65 @@
+topics ==>
+1. ID
+2. TOPIC (EM, RADS, ETC.)
+
+journals ==>
+
+1. ID
+2. JOURNAL NAME
+3. TOPIC ==> TOPIC[ID]@[TOPIC]
+
+journal_pseudonyms ==>
+1. ID
+2. JOURNAL ==> JOURNALS[ID]
+3. PSEUDONYM
+
+journal_years ==>
+1. ID
+2. JOURNAL ==> JOURNALS [ID]@[NAME]
+3. YEAR (2016, 2017, ETC.)
+
+articles ==>
+1. ID
+2. JOURNAL
+2. YEAR & 2 ==> JOURNAL_YEARS[ID]@[YEAR]
+3. "title":"Diagnostic performance of 68Ga-PSMA-11 (HBED-CC) PET/CT in patients with recurrent prostate cancer: evaluation in 1007 patients"
+4. "googleId":"MK_J-nuWDdsJ"
+5. "googleLink":"https://link.springer.com/article/10.1007/s00259-017-3711-7"
+6. "googleCitationCount":298
+7. "googleAuthor":""
+8. "doi":"10.1007/s00259-017-3711-7"
+9. "elsevierAuthor":"De Bari B."
+10. "publicationName":"Cancer/Radiotherapie"
+11. "elsevierCoverDate":"2019-06-01"
+12. "elsevierCoverDisplayDate":"June 2019"
+13. "elsevierCitationCount":"8"
+14. "twitterCount":1
+15. "altmetricId":20117199
+
+altmetric_authors
+1. ID
+2. ARTICLE ==> ARTICLES[ID]
+3. AUTHOR
+4. AUTHOR_ORDER (1, 2, 3, 4, etc.)
+
+article_statuses
+1. ID
+2. ARTICLE ==> ARTICLES[ID]
+3. STATUS, REPEAT! ==> statuses[statuses]
+
+statuses ==>
+1. ID
+2. "timeCollected":"Thu Oct 22 2020 00:40:33 GMT-0700 (Pacific Daylight Time)"
+3. "statuses":"1009761686809710592"
+4. "created_at":"Thu Jun 21 11:35:21 +0000 2018"
+5. "id":1009761686809710600 (TWITTER_ID)
+6. "text": "RT @CritCareMed: Current Issue: The β-Blocker Esmolol Restores the Vascular Waterfall Phenomenon After Acute Endotoxemia* https://t.co/RoLn…"
+7. USER ==> STATUSES_USERS[ID]
+
+statuses_users ==>
+1. ID
+2. "id":87313063
+3. "name":"Curro Miralles"
+4. "screen_name":"curromir"
+
+
