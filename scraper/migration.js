@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const credentials = require('./db').credentials;
+const credentials = require('../db').credentials;
 const pool = new Pool(credentials);
 
 const fs = require('fs');
@@ -20,7 +20,7 @@ function toTitleCase(str) {
 // first
 
 function saveJournals () {
-    fs.readdirSync('./data/journals').forEach(journal => {
+    fs.readdirSync(__dirname + '/journals').forEach(journal => {
         if (journal === '.DS_Store') return;
         let topicInt = 0;
         if (EM.includes(journal)) topicInt = 1;
@@ -31,7 +31,7 @@ function saveJournals () {
             .then(result => {
                 let journalId = result['rows'][0]['id'];
 
-                fs.readdirSync('./data/journals/' + journal).forEach(subfile => {
+                fs.readdirSync(__dirname  + '/journals/' + journal).forEach(subfile => {
                     let [year, scraperStatus, fileType] = subfile.split('.');
 
                     // save journal years to journal_years
@@ -41,7 +41,7 @@ function saveJournals () {
                             .then(result2 => {
                                 let journalYearId = result2['rows'][0]['id'];
 
-                                let raw = fs.readFileSync(__dirname + '/data/journals/' + journal + '/' + subfile);
+                                let raw = fs.readFileSync(__dirname + '/journals/' + journal + '/' + subfile);
                                 JSON.parse(raw).forEach(article => {
                                     // save article to articles
 
@@ -74,6 +74,8 @@ function saveJournals () {
     });
 }
 
+saveJournals(HEMEONC)
+
 // second
 
 function savePseudonyms (meta) {
@@ -96,8 +98,8 @@ function savePseudonyms (meta) {
 // third (save statuses)
 
 function saveStatuses() {
-    fs.readdirSync('./data/statuses').forEach(file => {
-        let status = JSON.parse(fs.readFileSync('./data/statuses/' + file));
+    fs.readdirSync('./statuses').forEach(file => {
+        let status = JSON.parse(fs.readFileSync('./statuses/' + file));
         if (status.timeCollected === undefined) return;
         if (status.user !== undefined) {
             pool.query('INSERT INTO statuses_users(twitter_id, name, screen_name) VALUES($1, $2, $3) RETURNING id', [status.user.id, status.user.name, status.user.screen_name])
@@ -118,4 +120,10 @@ function saveStatuses() {
                 }).catch(e => console.log(e))
         }
     })
+}
+
+exports.migration = {
+    saveJournals,
+    savePseudonyms,
+    saveStatuses
 }

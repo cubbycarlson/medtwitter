@@ -41,7 +41,7 @@ CREATE TABLE "public"."journal_years" (
 
 CREATE TABLE "public"."articles" (
     "id" serial,
-    "journal" text,
+    "journal" int,
     "year" text,
     "title" text,
     "google_id" text,
@@ -63,7 +63,7 @@ CREATE TABLE "public"."altmetric_authors" (
     "id" serial,
     "article" int,
     "author" text,
-    "author_order" int,
+    "author_order" text,
     PRIMARY KEY ("id")
 );
 
@@ -81,7 +81,7 @@ CREATE TABLE "public"."statuses" (
     "created_at" text,
     "twitter_id" text,
     "text" text,
-    "statuses_user" text,
+    "statuses_user" int,
     PRIMARY KEY ("id")
 );
 
@@ -98,3 +98,4 @@ CREATE TABLE "public"."statuses_users" (
 INSERT INTO users (username, password, email) VALUES ('cubby', '$2b$12$.ruahIyDSeTgIDIF0alEDuKRf0Kp5pUxix9PFjawKFKqsMyj4L8/G', 'cubbycarlson@gmail.com');
 INSERT INTO "public"."topics"("topic") VALUES('emergency medicine') RETURNING "id", "topic";
 INSERT INTO "public"."topics"("topic") VALUES('radiology') RETURNING "id", "topic";
+INSERT INTO "public"."topics"("topic") VALUES('hemeonc') RETURNING "id", "topic";

@@ -27,6 +27,9 @@ async function scrape(journal, year) {
           console.log('fetched:', url)
           if (json['service-error']) {
             console.log("elsevier service error")
+          } else if  (json['search-results'] === undefined) {
+            console.log('elsevier error #2');
+            file[index].elsevierCitationCount = 0;
           } else if (json['search-results']['entry'][0].error) {
             console.log('elsevier error');
             file[index].elsevierCitationCount = 0;
